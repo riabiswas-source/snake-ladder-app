@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snake & Ladder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <h1>🐍 Snake &amp; Ladder 🪜</h1>
+
+    <div class="main-layout">
+      <!-- Board -->
+      <div class="board-wrapper">
+        <canvas id="boardCanvas" width="540" height="540"></canvas>
+      </div>
+
+      <!-- Side Panel -->
+      <div class="side-panel">
+        <!-- Players -->
+        <div class="players-info">
+          <div class="player-card" id="card-player">
+            <div class="player-token" style="background:#e74c3c;">🔴</div>
+            <div class="player-details">
+              <span class="player-name">You</span>
+              <span class="player-pos" id="pos-player">Position: 0</span>
+            </div>
+            <div class="active-indicator" id="ind-player"></div>
+          </div>
+          <div class="player-card" id="card-cpu">
+            <div class="player-token" style="background:#3498db;">🔵</div>
+            <div class="player-details">
+              <span class="player-name">CPU</span>
+              <span class="player-pos" id="pos-cpu">Position: 0</span>
+            </div>
+            <div class="active-indicator" id="ind-cpu"></div>
+          </div>
+        </div>
+
+        <!-- Dice -->
+        <div class="dice-section">
+          <div class="dice" id="dice">🎲</div>
+          <div class="dice-value" id="dice-value">-</div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+          <button id="rollBtn" class="btn btn-roll">Roll Dice</button>
+          <button id="resetBtn" class="btn btn-reset">New Game</button>
+        </div>
+
+        <!-- Log -->
+        <div class="log-section">
+          <h3>Game Log</h3>
+          <div class="log" id="log"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Winner overlay -->
+    <div class="overlay hidden" id="overlay">
+      <div class="overlay-box">
+        <div class="trophy">🏆</div>
+        <h2 id="winner-text"></h2>
+        <button class="btn btn-roll" id="playAgainBtn">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
